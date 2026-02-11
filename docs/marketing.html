@@ -210,6 +210,111 @@
       font-size: 18px;
     }
 
+    /* Budget grid */
+    .budget-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .budget-card {
+      background: linear-gradient(135deg, rgba(20, 50, 58, 0.8), rgba(14, 35, 41, 0.9));
+      border: 3px solid #caa24d;
+      border-radius: 12px;
+      padding: 30px;
+      color: #f5f3ec;
+    }
+
+    .budget-card h4 {
+      font-family: "Cinzel", serif;
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #caa24d;
+    }
+
+    .budget-card ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .budget-card li {
+      padding: 8px 0;
+      padding-left: 20px;
+      position: relative;
+      font-size: 15px;
+    }
+
+    .budget-card li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #caa24d;
+    }
+
+    .budget-highlight {
+      background: rgba(202, 162, 77, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    /* Stretch Goals */
+    .stretch-goals {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .stretch-goal {
+      background: linear-gradient(135deg, rgba(20, 50, 58, 0.8), rgba(14, 35, 41, 0.9));
+      border: 3px solid #caa24d;
+      border-radius: 12px;
+      padding: 25px 30px;
+      color: #f5f3ec;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .stretch-goal:hover {
+      transform: translateX(5px);
+      box-shadow: 0 10px 30px rgba(202, 162, 77, 0.3);
+    }
+
+    .stretch-goal-amount {
+      font-family: "Pirata One", cursive;
+      font-size: 36px;
+      color: #caa24d;
+      min-width: 120px;
+      text-align: center;
+      background: rgba(202, 162, 77, 0.15);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .stretch-goal-content {
+      flex: 1;
+    }
+
+    .stretch-goal-title {
+      font-family: "Cinzel", serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #f5f3ec;
+    }
+
+    .stretch-goal-description {
+      font-size: 15px;
+      color: #ccc;
+    }
+
     /* SWOT Analysis */
     .swot-grid {
       display: grid;
@@ -343,6 +448,19 @@
 
       .grid-4p {
         grid-template-columns: 1fr;
+      }
+
+      .budget-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stretch-goal {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .stretch-goal-amount {
+        min-width: auto;
       }
     }
   </style>
@@ -617,29 +735,119 @@
       </ul>
     </div>
 
-    <!-- Identité visuelle -->
+    <!-- Budget -->
     <div class="marketing-section">
-      <h2>Identité Visuelle</h2>
-      
-      <div class="grid-4p">
-        <div class="grid-item">
-          <h4>🏴‍☠️ Univers</h4>
-          <p>Univers pirate fort et immersif</p>
+      <h2>Budget</h2>
+      <p>
+        Cette section présente la structure budgétaire de <strong>5 Pirates</strong>, pensée dans une logique d'entreprise. 
+        L'objectif est de maîtriser les coûts fixes, d'atteindre un seuil de rentabilité clair, et de garantir la viabilité 
+        du projet à moyen terme.
+      </p>
+
+      <h3>a) Coûts de production</h3>
+      <div class="budget-grid">
+        <div class="budget-card">
+          <h4>📦 Coût d'une boîte</h4>
+          <p><strong>6 € par unité</strong></p>
+          <ul>
+            <li>Impression des cartes</li>
+            <li>Fabrication de la boîte</li>
+            <li>Éléments de jeu</li>
+            <li>Assemblage</li>
+          </ul>
         </div>
 
-        <div class="grid-item">
-          <h4>🎨 Design</h4>
-          <p>Symboles clairs pour chaque pirate</p>
+        <div class="budget-card">
+          <h4>🏴‍☠️ Coût des figurines</h4>
+          <p><strong>45 € le set de 5 figurines</strong></p>
+          <div class="budget-highlight">
+            Soit 9 € par figurine
+          </div>
+          <p style="margin-top: 15px;">
+            Les figurines constituent un élément différenciant fort, augmentant la valeur perçue du jeu.
+          </p>
+        </div>
+      </div>
+
+      <h3>b) Coûts de création et de conception</h3>
+      <p>
+        Les coûts de création correspondent à des <strong>coûts fixes</strong>, amortis sur les premières ventes du jeu.
+      </p>
+      <ul>
+        <li><strong>Artistes et designers</strong> (Cartes, boîte, règles)</li>
+        <li><strong>Artiste 3D</strong> (modélisation des figurines)</li>
+      </ul>
+      <div class="highlight-box">
+        L'ensemble des coûts artistiques est entièrement amorti après la vente d'environ 250 boîtes.
+        Ce choix permet de concentrer l'investissement créatif au lancement.
+      </div>
+
+      <h3>c) Impacts stratégiques sur le modèle économique</h3>
+      <p>Cette structure budgétaire implique plusieurs choix stratégiques :</p>
+      <ul>
+        <li>Un <strong>prix de vente accessible</strong>, cohérent avec la cible 16–25 ans</li>
+        <li>Les <strong>figurines</strong> seront intégrées comme récompense de donation goals</li>
+        <li>La rentabilité permet d'envisager des <strong>extensions</strong> ou de nouveaux contenus dans le futur</li>
+      </ul>
+    </div>
+
+    <!-- Stretch Goals -->
+    <div class="marketing-section">
+      <h2>Stretch Goals</h2>
+      <p>
+        Les stretch goals permettent de débloquer des améliorations et du contenu supplémentaire au fur et à mesure 
+        que la campagne de financement progresse.
+      </p>
+
+      <div class="stretch-goals">
+        <div class="stretch-goal">
+          <div class="stretch-goal-amount">50k €</div>
+          <div class="stretch-goal-content">
+            <div class="stretch-goal-title">🏪 Sortie officielle en magasin</div>
+            <div class="stretch-goal-description">
+              Le jeu sera disponible dans les boutiques spécialisées en jeux de société
+            </div>
+          </div>
         </div>
 
-        <div class="grid-item">
-          <h4>⚡ Dynamisme</h4>
-          <p>Design simple mais dynamique</p>
+        <div class="stretch-goal">
+          <div class="stretch-goal-amount">55k €</div>
+          <div class="stretch-goal-content">
+            <div class="stretch-goal-title">✨ Cartes en linen</div>
+            <div class="stretch-goal-description">
+              Amélioration de la qualité des cartes avec un finish linen premium pour une meilleure durabilité
+            </div>
+          </div>
         </div>
 
-        <div class="grid-item">
-          <h4>💬 Message</h4>
-          <p>Rapidité • Duel • Stratégie</p>
+        <div class="stretch-goal">
+          <div class="stretch-goal-amount">60k €</div>
+          <div class="stretch-goal-content">
+            <div class="stretch-goal-title">🎴 Extension cartes avancées</div>
+            <div class="stretch-goal-description">
+              Ajout de nouvelles cartes stratégiques pour enrichir l'expérience de jeu
+            </div>
+          </div>
+        </div>
+
+        <div class="stretch-goal">
+          <div class="stretch-goal-amount">70k €</div>
+          <div class="stretch-goal-content">
+            <div class="stretch-goal-title">🎲 Dés custom</div>
+            <div class="stretch-goal-description">
+              Dés personnalisés aux couleurs de 5 Pirates avec symboles uniques
+            </div>
+          </div>
+        </div>
+
+        <div class="stretch-goal">
+          <div class="stretch-goal-amount">85k €</div>
+          <div class="stretch-goal-content">
+            <div class="stretch-goal-title">💀 Extension "Le 6e pirate : Davy Jones"</div>
+            <div class="stretch-goal-description">
+              Un tout nouveau personnage avec son deck unique et ses mécaniques exclusives
+            </div>
+          </div>
         </div>
       </div>
     </div>
