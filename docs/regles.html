@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 Pirates – Règles du Jeu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Pirata+One&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: radial-gradient(circle at top, #14323a, #050e12);
+      color: #f5f3ec;
+      line-height: 1.7;
+    }
+
+    /* Navigation */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(5, 14, 18, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid rgba(202, 162, 77, 0.3);
+    }
+
+    .logo {
+      font-family: "Pirata One", cursive;
+      font-size: 28px;
+      letter-spacing: 3px;
+      color: #caa24d;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo::before {
+      content: "⚓";
+      font-size: 32px;
+    }
+
+    .back-btn {
+      background: linear-gradient(135deg, #caa24d, #d4b769);
+      border: none;
+      padding: 10px 28px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(202, 162, 77, 0.3);
+      color: #0e2329;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(202, 162, 77, 0.5);
+    }
+
+    /* Container principal */
+    .rules-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 40px 100px;
+    }
+
+    /* Header */
+    .rules-header {
+      text-align: center;
+      margin-bottom: 60px;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .rules-header h1 {
+      font-family: "Pirata One", cursive;
+      font-size: 72px;
+      letter-spacing: 6px;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #f5f3ec, #caa24d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .rules-header p {
+      font-size: 18px;
+      color: #caa24d;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    /* Sections des règles */
+    .rule-section {
+      background: linear-gradient(135deg, rgba(245, 243, 236, 0.98), rgba(230, 223, 206, 0.98));
+      color: #1a2a30;
+      padding: 40px 50px;
+      margin-bottom: 40px;
+      border: 3px solid #caa24d;
+      border-radius: 8px;
+      box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.4),
+        inset 0 0 20px rgba(202, 162, 77, 0.1);
+      position: relative;
+      animation: fadeInUp 1s ease backwards;
+    }
+
+    .rule-section:nth-child(1) { animation-delay: 0.1s; }
+    .rule-section:nth-child(2) { animation-delay: 0.2s; }
+    .rule-section:nth-child(3) { animation-delay: 0.3s; }
+    .rule-section:nth-child(4) { animation-delay: 0.4s; }
+    .rule-section:nth-child(5) { animation-delay: 0.5s; }
+
+    .rule-section::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 1px solid rgba(202, 162, 77, 0.3);
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    .rule-section h2 {
+      font-family: "Cinzel", serif;
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #0e2329;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .rule-section h2::before {
+      content: "⚔";
+      font-size: 28px;
+      color: #caa24d;
+    }
+
+    .rule-section h3 {
+      font-family: "Cinzel", serif;
+      font-size: 22px;
+      margin-top: 25px;
+      margin-bottom: 12px;
+      color: #0e2329;
+    }
+
+    .rule-section p {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .rule-section ul, .rule-section ol {
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+
+    .rule-section li {
+      margin-bottom: 10px;
+      padding-left: 5px;
+    }
+
+    .rule-section strong {
+      color: #0e2329;
+      font-weight: 600;
+    }
+
+    .example {
+      background: rgba(202, 162, 77, 0.15);
+      border-left: 4px solid #caa24d;
+      padding: 15px 20px;
+      margin: 20px 0;
+      font-style: italic;
+    }
+
+    /* Section classes pirates */
+    .pirates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .pirate-card {
+      background: rgba(14, 35, 41, 0.8);
+      border: 3px solid #caa24d;
+      border-radius: 12px;
+      padding: 25px;
+      color: #f5f3ec;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .pirate-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(202, 162, 77, 0.3);
+      border-color: #d4b769;
+    }
+
+    .pirate-card h4 {
+      font-family: "Cinzel", serif;
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #caa24d;
+      letter-spacing: 2px;
+    }
+
+    .pirate-card ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .pirate-card li {
+      padding: 8px 0;
+      padding-left: 20px;
+      position: relative;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .pirate-card li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #caa24d;
+    }
+
+    .pirate-card .secret {
+      background: rgba(202, 162, 77, 0.2);
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .pirate-card .secret::before {
+      content: "🔒 SECRET : ";
+      font-weight: bold;
+      color: #caa24d;
+    }
+
+    /* Footer */
+    footer {
+      background: #050e12;
+      color: #aaa;
+      padding: 40px 25px;
+      text-align: center;
+      font-size: 14px;
+      border-top: 2px solid rgba(202, 162, 77, 0.3);
+      margin-top: 60px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav {
+        padding: 15px 30px;
+      }
+
+      .rules-container {
+        padding: 40px 20px 80px;
+      }
+
+      .rules-header h1 {
+        font-size: 48px;
+      }
+
+      .rule-section {
+        padding: 30px 25px;
+      }
+
+      .rule-section h2 {
+        font-size: 26px;
+      }
+
+      .pirates-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="logo">5 PIRATES</a>
+    <a href="index.html" class="back-btn">← Retour à l'accueil</a>
+  </nav>
+
+  <!-- Container des règles -->
+  <div class="rules-container">
+    <!-- Header -->
+    <div class="rules-header">
+      <h1>RÈGLES DU JEU</h1>
+      <p>Code des pirates</p>
+    </div>
+
+    <!-- But du jeu -->
+    <div class="rule-section">
+      <h2>But du Jeu</h2>
+      <p>
+        Dans <strong>5 Pirates</strong>, deux barons des mers, choisis parmi les cinq disponibles, s'affrontent en lançant
+        des sorts, des secrets et des attaques grâce à leurs cartes. Le but est de réduire les points de vie de l'adversaire à zéro.
+      </p>
+    </div>
+
+    <!-- Matériel -->
+    <div class="rule-section">
+      <h2>Matériel</h2>
+      <ul>
+        <li><strong>5 coffres de cartes (decks)</strong> composés chacun de 20 cartes communes et 5 cartes de classe</li>
+        <li><strong>2 dés à 6 faces</strong> (1 par joueur)</li>
+        <li><strong>1 compteur de points de vie</strong> (24 PV par joueur)</li>
+        <li><strong>1 plateau de jeu</strong> pour poser les cartes</li>
+      </ul>
+    </div>
+
+    <!-- Mise en place -->
+    <div class="rule-section">
+      <h2>Mise en Place</h2>
+      <ol>
+        <li>Les deux joueurs lancent chacun un dé. Celui qui obtient le résultat le plus
+        élevé choisit soit de sélectionner son deck en premier, soit de laisser l'adversaire
+        choisir.</li>
+        <li>Chaque joueur prend un deck de 25 cartes.</li>
+        <li>Les deux joueurs mélangent leur deck et piochent 5 cartes chacun.</li>
+        <li>Chaque joueur commence avec <strong>24 points de vie</strong>.</li>
+      </ol>
+    </div>
+
+    <!-- Déroulement d'un tour -->
+    <div class="rule-section">
+      <h2>Déroulement d'un Tour</h2>
+      
+      <h3>1. Phase de Pioche</h3>
+      <ul>
+        <li>Piochez 1 carte au début de chaque tour.</li>
+        <li>Lancez votre dé simultanément, le résultat indique votre <strong>énergie de combat</strong>
+        pendant ce tour.</li>
+      </ul>
+      <div class="example">
+        <strong>Exemple :</strong> Un 4 signifie que vous pouvez jouer une ou plusieurs cartes dont
+        le coût total cumulé en énergie est inférieur à 4.
+      </div>
+
+      <h3>2. Phase d'Abordage (simultanée)</h3>
+      <ul>
+        <li>Chaque joueur choisit les cartes qu'il veut jouer et les dépose face cachée sur
+        le milieu du plateau.</li>
+        <li>Révélez vos cartes en même temps.</li>
+        <li>Certaines cartes ont des effets immédiats, d'autres persistent pour les
+        prochains tours et les cartes secrètes s'activent lors d'événements spéciaux.</li>
+      </ul>
+
+      <h3>3. Phase des Conséquences</h3>
+      <ul>
+        <li>Appliquez les dégâts sur les points de vie des joueurs.</li>
+        <li>Gérez les effets durables et persistants.</li>
+        <li>Défaussez les cartes jouées, sauf si un effet demande de les conserver.</li>
+        <li>Si votre pile de cartes est vide, mélangez la défausse pour refaire un deck.</li>
+      </ul>
+    </div>
+
+    <!-- Mécaniques de jeu -->
+    <div class="rule-section">
+      <h2>Mécaniques de Jeu</h2>
+      <ul>
+        <li><strong>Confrontation simultanée :</strong> Les joueurs révèlent leurs cartes en même temps.</li>
+        <li><strong>Gestion de l'énergie :</strong> Le dé limite les actions possibles à chaque tour.</li>
+        <li><strong>Secrets :</strong> Indiqués sur les cartes, ils s'activent lors d'événements précis.</li>
+        <li><strong>Effets persistants :</strong> Certaines cartes ont un impact sur plusieurs tours.</li>
+      </ul>
+    </div>
+
+    <!-- Classes et talents -->
+    <div class="rule-section">
+      <h2>Classes et Talents</h2>
+      <p>
+        Choisissez votre deck pour influencer la bataille : chaque baron des mers
+        possède 5 talents différents.
+      </p>
+
+      <div class="pirates-grid">
+        <!-- Le Capitaine -->
+        <div class="pirate-card">
+          <h4>⚓ LE CAPITAINE</h4>
+          <ul>
+            <li>Échange les cartes des mains des 2 joueurs.</li>
+            <li>Échange les points de vie des 2 joueurs.</li>
+            <li>Lancez un dé, si pair, double votre vie sinon perdez la moitié.</li>
+            <li>Au prochain tour, l'adversaire ne pourra pas se défendre.</li>
+          </ul>
+          <div class="secret">Lorsqu'une carte coûtant 6 est jouée, inflige 10 dégâts aux 2 joueurs.</div>
+        </div>
+
+        <!-- Le Kraken -->
+        <div class="pirate-card">
+          <h4>🐙 LE KRAKEN</h4>
+          <ul>
+            <li>Jusqu'à la fin de la partie, infligez 1 point de dégât chaque tour à votre adversaire.</li>
+            <li>Nécessite 3 cartes différentes, inflige 20 points de dégâts à l'adversaire (3 exemplaires).</li>
+          </ul>
+          <div class="secret">Revenez à la vie avec 3 points de vie, défaussez votre main et piochez 5 nouvelles cartes.</div>
+        </div>
+
+        <!-- La Sirène -->
+        <div class="pirate-card">
+          <h4>🧜‍♀️ LA SIRÈNE</h4>
+          <ul>
+            <li>Renvoie la main entière de l'adversaire à son deck, le mélange et pioche 5 cartes.</li>
+            <li>Force l'adversaire à se défausser de sa carte la plus chère (en énergie).</li>
+            <li>Dévoile et annule tous les secrets de l'adversaire.</li>
+            <li>Diminue de moitié le dé de l'adversaire au prochain tour (ex : 5 devient 3).</li>
+          </ul>
+          <div class="secret">Les dégâts subis pendant ce tour par la sirène sont renvoyés à l'adversaire.</div>
+        </div>
+
+        <!-- Le Fantôme -->
+        <div class="pirate-card">
+          <h4>👻 LE FANTÔME</h4>
+          <ul>
+            <li>Hantez l'adversaire pendant 3 tours, infligeant 2 dégâts par tour.</li>
+            <li>Aspirez l'âme adverse et volez 5 points de vie (se soigne de 5).</li>
+            <li>Perdez 5 points de vie mais protégez-vous contre 5 dégâts adverse pendant les 2 prochains tours.</li>
+            <li>Supprimez tous les effets persistants adverses.</li>
+          </ul>
+          <div class="secret">Doublez l'effet de votre prochain sort.</div>
+        </div>
+
+        <!-- Le Perroquet -->
+        <div class="pirate-card">
+          <h4>🦜 LE PERROQUET</h4>
+          <ul>
+            <li>Copie la ou les cartes jouées par l'adversaire ce tour.</li>
+            <li>Rejoue vos cartes jouées lors du tour précédent.</li>
+            <li>Au prochain tour, infligez des dégâts égaux au dé ×2.</li>
+            <li>Annule les cartes jouées par l'adversaire ce tour.</li>
+          </ul>
+          <div class="secret">Vos cartes coûtent 1 énergie au prochain tour.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fin de la partie -->
+    <div class="rule-section">
+      <h2>Fin de la Partie</h2>
+      <p>
+        Un joueur perd la partie lorsqu'il atteint <strong>0 points de vie</strong>.
+      </p>
+      <p style="margin-top: 20px; text-align: center; font-size: 18px; color: #0e2329;">
+        <strong>⚔ Que le meilleur pirate gagne ! ⚔</strong>
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <strong>5 PIRATES</strong> — Tous droits réservés © 2026<br>
+    Mentions légales · Contact · Presse
+  </footer>
+</body>
+</html>

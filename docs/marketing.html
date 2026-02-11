@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 Pirates – Stratégie Marketing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Pirata+One&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: radial-gradient(circle at top, #14323a, #050e12);
+      color: #f5f3ec;
+      line-height: 1.7;
+    }
+
+    /* Navigation */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(5, 14, 18, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid rgba(202, 162, 77, 0.3);
+    }
+
+    .logo {
+      font-family: "Pirata One", cursive;
+      font-size: 28px;
+      letter-spacing: 3px;
+      color: #caa24d;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo::before {
+      content: "⚓";
+      font-size: 32px;
+    }
+
+    .back-btn {
+      background: linear-gradient(135deg, #caa24d, #d4b769);
+      border: none;
+      padding: 10px 28px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(202, 162, 77, 0.3);
+      color: #0e2329;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(202, 162, 77, 0.5);
+    }
+
+    /* Container principal */
+    .marketing-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 60px 40px 100px;
+    }
+
+    /* Header */
+    .marketing-header {
+      text-align: center;
+      margin-bottom: 80px;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .marketing-header h1 {
+      font-family: "Pirata One", cursive;
+      font-size: 72px;
+      letter-spacing: 6px;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #f5f3ec, #caa24d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .marketing-header p {
+      font-size: 18px;
+      color: #caa24d;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    /* Sections marketing */
+    .marketing-section {
+      background: linear-gradient(135deg, rgba(245, 243, 236, 0.98), rgba(230, 223, 206, 0.98));
+      color: #1a2a30;
+      padding: 40px 50px;
+      margin-bottom: 40px;
+      border: 3px solid #caa24d;
+      border-radius: 8px;
+      box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.4),
+        inset 0 0 20px rgba(202, 162, 77, 0.1);
+      position: relative;
+      animation: fadeInUp 1s ease backwards;
+    }
+
+    .marketing-section::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 1px solid rgba(202, 162, 77, 0.3);
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    .marketing-section h2 {
+      font-family: "Cinzel", serif;
+      font-size: 36px;
+      margin-bottom: 25px;
+      color: #0e2329;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .marketing-section h2::before {
+      content: "⚔";
+      font-size: 28px;
+      color: #caa24d;
+    }
+
+    .marketing-section h3 {
+      font-family: "Cinzel", serif;
+      font-size: 24px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #0e2329;
+      border-bottom: 2px solid #caa24d;
+      padding-bottom: 10px;
+    }
+
+    .marketing-section h4 {
+      font-family: "Cinzel", serif;
+      font-size: 20px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #0e2329;
+    }
+
+    .marketing-section p {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .marketing-section ul {
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+
+    .marketing-section li {
+      margin-bottom: 10px;
+      padding-left: 5px;
+    }
+
+    .marketing-section strong {
+      color: #0e2329;
+      font-weight: 600;
+    }
+
+    /* Grilles spéciales */
+    .grid-4p {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .grid-item {
+      background: rgba(202, 162, 77, 0.15);
+      border-left: 4px solid #caa24d;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .grid-item h4 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    /* SWOT Analysis */
+    .swot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .swot-box {
+      background: rgba(14, 35, 41, 0.8);
+      border: 3px solid #caa24d;
+      border-radius: 12px;
+      padding: 30px;
+      color: #f5f3ec;
+    }
+
+    .swot-box h4 {
+      font-family: "Cinzel", serif;
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #caa24d;
+      letter-spacing: 2px;
+    }
+
+    .swot-box ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swot-box li {
+      padding: 8px 0;
+      padding-left: 20px;
+      position: relative;
+      font-size: 15px;
+    }
+
+    .swot-box li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #caa24d;
+    }
+
+    /* Cibles */
+    .target-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .target-card {
+      background: linear-gradient(135deg, rgba(20, 50, 58, 0.8), rgba(14, 35, 41, 0.9));
+      border: 3px solid #caa24d;
+      border-radius: 12px;
+      padding: 30px;
+      color: #f5f3ec;
+      transition: all 0.3s ease;
+    }
+
+    .target-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(202, 162, 77, 0.3);
+    }
+
+    .target-card h4 {
+      font-family: "Cinzel", serif;
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #caa24d;
+    }
+
+    .target-card .age {
+      background: rgba(202, 162, 77, 0.2);
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    /* Highlight boxes */
+    .highlight-box {
+      background: linear-gradient(135deg, #caa24d, #d4b769);
+      color: #0e2329;
+      padding: 25px 30px;
+      border-radius: 8px;
+      margin: 25px 0;
+      font-weight: 600;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      background: #050e12;
+      color: #aaa;
+      padding: 40px 25px;
+      text-align: center;
+      font-size: 14px;
+      border-top: 2px solid rgba(202, 162, 77, 0.3);
+      margin-top: 60px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav {
+        padding: 15px 30px;
+      }
+
+      .marketing-container {
+        padding: 40px 20px 80px;
+      }
+
+      .marketing-header h1 {
+        font-size: 48px;
+      }
+
+      .marketing-section {
+        padding: 30px 25px;
+      }
+
+      .marketing-section h2 {
+        font-size: 28px;
+      }
+
+      .swot-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-4p {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="logo">5 PIRATES</a>
+    <a href="index.html" class="back-btn">← Retour à l'accueil</a>
+  </nav>
+
+  <!-- Container marketing -->
+  <div class="marketing-container">
+    <!-- Header -->
+    <div class="marketing-header">
+      <h1>STRATÉGIE MARKETING</h1>
+      <p>Communication & Positionnement</p>
+    </div>
+
+    <!-- Présentation -->
+    <div class="marketing-section">
+      <h2>Présentation du Jeu</h2>
+      <p>
+        <strong>5 Pirates</strong> est un jeu de cartes stratégique et compétitif, conçu pour des parties rapides d'environ 10 minutes. 
+        Chaque joueur choisit l'un des 5 pirates, chacun disposant de son propre paquet de cartes et de son style de jeu.
+      </p>
+      <p>
+        À chaque tour, les joueurs lancent un dé qui détermine le nombre de cartes qu'ils peuvent jouer. Les cartes permettent 
+        d'infliger des dégâts, de se défendre, de créer des combos ou de poser des pièges. Le premier joueur à réduire les 
+        points de vie de son adversaire à 0 remporte la partie.
+      </p>
+      <div class="highlight-box">
+        Le jeu repose sur un équilibre entre stratégie, anticipation et hasard, 
+        ce qui garantit des parties variées et dynamiques.
+      </div>
+    </div>
+
+    <!-- Objectifs marketing -->
+    <div class="marketing-section">
+      <h2>Objectifs Marketing</h2>
+      <p>Notre stratégie marketing vise à :</p>
+      <ul>
+        <li>Faire connaître <strong>5 Pirates</strong> auprès de son public cible</li>
+        <li>Donner envie de jouer rapidement (accessibilité immédiate)</li>
+        <li>Mettre en avant la rejouabilité et la diversité stratégique</li>
+        <li>Créer une identité forte et mémorable autour de l'univers pirate</li>
+      </ul>
+    </div>
+
+    <!-- Marketing Mix (4P) -->
+    <div class="marketing-section">
+      <h2>Marketing Mix (4P)</h2>
+      <p>Le marketing mix permet de structurer la stratégie marketing de 5 Pirates autour de quatre axes :</p>
+
+      <div class="grid-4p">
+        <div class="grid-item">
+          <h4>📦 Produit</h4>
+          <ul>
+            <li>5 pirates avec styles de jeu uniques</li>
+            <li>Cartes aux effets variés</li>
+            <li>Un dé pour le hasard maîtrisé</li>
+            <li>Parties courtes (≈10 min)</li>
+            <li>Facile à prendre en main</li>
+            <li>Fortement rejouable</li>
+          </ul>
+        </div>
+
+        <div class="grid-item">
+          <h4>💰 Prix</h4>
+          <p><strong>12.99€</strong></p>
+          <ul>
+            <li>Prix volontairement modéré</li>
+            <li>Cohérent avec des jeux de cartes rapides</li>
+            <li>Adapté à un achat impulsif</li>
+            <li>Réduit la barrière à l'entrée</li>
+          </ul>
+        </div>
+
+        <div class="grid-item">
+          <h4>🗺️ Distribution</h4>
+          <ul>
+            <li>Site web du jeu</li>
+            <li>Boutiques spécialisées en jeux de société</li>
+            <li>Événements ludiques</li>
+            <li>Salons de jeux</li>
+          </ul>
+        </div>
+
+        <div class="grid-item">
+          <h4>📢 Communication</h4>
+          <ul>
+            <li>Site web comme support central</li>
+            <li>Réseaux sociaux (Instagram, TikTok)</li>
+            <li>Vidéos courtes de parties</li>
+            <li>Bouche-à-oreille</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Positionnement -->
+    <div class="marketing-section">
+      <h2>Positionnement</h2>
+      <p>
+        <strong>5 Pirates</strong> se positionne comme un <strong>jeu de cartes stratégique rapide, compétitif et accessible</strong>.
+        Il vise des joueurs recherchant des parties courtes mais intenses, avec une vraie profondeur tactique.
+      </p>
+
+      <h3>Éléments clés du positionnement</h3>
+      <ul>
+        <li>Jeu rapide (≈10 minutes)</li>
+        <li>Forte interaction entre joueurs</li>
+        <li>Asymétrie des styles de jeu (5 pirates)</li>
+        <li>Équilibre entre hasard (dé) et stratégie</li>
+      </ul>
+
+      <div class="highlight-box">
+        5 Pirates se situe entre les jeux très accessibles mais peu stratégiques 
+        et les jeux experts plus longs et complexes.
+      </div>
+    </div>
+
+    <!-- Cible marketing -->
+    <div class="marketing-section">
+      <h2>Cible Marketing</h2>
+      
+      <div class="target-cards">
+        <div class="target-card">
+          <h4>🎯 Cœur de cible</h4>
+          <div class="age">16-25 ans</div>
+          <ul>
+            <li>Lycéens, étudiants, jeunes adultes</li>
+            <li>Joueurs aimant la compétition</li>
+            <li>Public consommateur de jeux rapides et modernes</li>
+          </ul>
+        </div>
+
+        <div class="target-card">
+          <h4>🎯 Cible principale</h4>
+          <div class="age">Jusqu'à 30 ans</div>
+          <ul>
+            <li>Jeunes actifs</li>
+            <li>Joueurs occasionnels ou réguliers</li>
+            <li>Groupes d'amis recherchant des jeux courts mais engageants</li>
+          </ul>
+        </div>
+
+        <div class="target-card">
+          <h4>🎯 Cible secondaire</h4>
+          <div class="age">Tous âges</div>
+          <ul>
+            <li>Joueurs de jeux de société expérimentés</li>
+            <li>Amateurs de jeux de cartes stratégiques</li>
+            <li>Public intéressé par forte rejouabilité</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Pourquoi ces cibles ?</h3>
+      <ul>
+        <li>Disponibilité limitée → besoin de jeux courts</li>
+        <li>Recherche de stratégie sans règles complexes</li>
+        <li>Goût pour les univers forts et compétitifs</li>
+      </ul>
+    </div>
+
+    <!-- Analyse SWOT -->
+    <div class="marketing-section">
+      <h2>Analyse SWOT</h2>
+      
+      <div class="swot-grid">
+        <div class="swot-box">
+          <h4>💪 Forces</h4>
+          <ul>
+            <li>Parties rapides et dynamiques</li>
+            <li>Univers pirate attractif</li>
+            <li>5 styles de jeu différents</li>
+            <li>Règles simples, apprentissage rapide</li>
+            <li>Forte rejouabilité</li>
+          </ul>
+        </div>
+
+        <div class="swot-box">
+          <h4>⚠️ Faiblesses</h4>
+          <ul>
+            <li>Dépendance partielle au hasard (dé)</li>
+            <li>Jeu principalement orienté duel</li>
+            <li>Notoriété inexistante au lancement</li>
+          </ul>
+        </div>
+
+        <div class="swot-box">
+          <h4>🚀 Opportunités</h4>
+          <ul>
+            <li>Intérêt croissant pour les jeux de société modernes</li>
+            <li>Popularité des jeux courts</li>
+            <li>Facilité de communication via réseaux sociaux</li>
+            <li>Possibilité d'extensions (nouveaux pirates)</li>
+          </ul>
+        </div>
+
+        <div class="swot-box">
+          <h4>⚡ Menaces</h4>
+          <ul>
+            <li>Forte concurrence dans les jeux de cartes</li>
+            <li>Comparaison avec des jeux déjà connus</li>
+            <li>Attention limitée des joueurs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analyse des concurrents -->
+    <div class="marketing-section">
+      <h2>Analyse des Concurrents</h2>
+
+      <h3>Concurrents directs (jeux de cartes stratégiques)</h3>
+      <ul>
+        <li><strong>Mindbug :</strong> duel stratégique avec gestion des créatures et anticipation</li>
+        <li><strong>Star Realms :</strong> deck-building rapide orienté combat</li>
+        <li><strong>Hero Realms :</strong> combat de cartes asymétrique avec personnages</li>
+        <li><strong>Smash Up :</strong> combinaisons de factions et synergies de cartes</li>
+      </ul>
+      <p>
+        Ces jeux proposent, comme 5 Pirates, des affrontements directs, une forte interaction 
+        et une dimension stratégique marquée.
+      </p>
+
+      <h3>Concurrents indirects</h3>
+      <ul>
+        <li><strong>Uno :</strong> très accessible mais peu stratégique</li>
+        <li><strong>Exploding Kittens :</strong> rapide et fun, mais fortement basé sur le hasard</li>
+        <li><strong>Bang! :</strong> stratégique mais plus long et plus complexe</li>
+      </ul>
+
+      <div class="highlight-box">
+        Avantage concurrentiel : Durée plus courte que la majorité des jeux stratégiques + 
+        Règles plus accessibles que les jeux experts + Univers pirate fort et immédiatement compréhensible
+      </div>
+    </div>
+
+    <!-- Stratégie de communication -->
+    <div class="marketing-section">
+      <h2>Stratégie de Communication</h2>
+
+      <h3>a) Site web (support principal)</h3>
+      <p>Le site web a pour rôle de :</p>
+      <ul>
+        <li>Présenter clairement le jeu</li>
+        <li>Expliquer les règles de manière visuelle</li>
+        <li>Mettre en avant les 5 pirates</li>
+        <li>Valoriser la stratégie marketing</li>
+      </ul>
+      <p><strong>Ton utilisé :</strong> dynamique, clair et immersif</p>
+
+      <h3>b) Réseaux sociaux (communication digitale)</h3>
+      <p><strong>Plateformes privilégiées :</strong> Instagram et TikTok</p>
+      <p><strong>Contenus envisagés :</strong></p>
+      <ul>
+        <li>Vidéos courtes de parties</li>
+        <li>Présentation des pirates</li>
+        <li>Combos impressionnants</li>
+        <li>Situations de retournement de partie</li>
+      </ul>
+      <p><strong>Objectif :</strong> Montrer qu'une partie est rapide, intense et fun</p>
+
+      <h3>c) Communication par l'expérience</h3>
+      <ul>
+        <li>Démonstrations en classe</li>
+        <li>Mini-tournois</li>
+        <li>Bouche-à-oreille</li>
+      </ul>
+    </div>
+
+    <!-- Identité visuelle -->
+    <div class="marketing-section">
+      <h2>Identité Visuelle</h2>
+      
+      <div class="grid-4p">
+        <div class="grid-item">
+          <h4>🏴‍☠️ Univers</h4>
+          <p>Univers pirate fort et immersif</p>
+        </div>
+
+        <div class="grid-item">
+          <h4>🎨 Design</h4>
+          <p>Symboles clairs pour chaque pirate</p>
+        </div>
+
+        <div class="grid-item">
+          <h4>⚡ Dynamisme</h4>
+          <p>Design simple mais dynamique</p>
+        </div>
+
+        <div class="grid-item">
+          <h4>💬 Message</h4>
+          <p>Rapidité • Duel • Stratégie</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="marketing-section">
+      <h2>Conclusion</h2>
+      <p>
+        La stratégie marketing de <strong>5 Pirates</strong> repose sur un jeu accessible, rapide et stratégique, 
+        soutenu par une communication moderne et visuelle. Grâce à une identité forte et une expérience de jeu 
+        engageante, 5 Pirates se positionne comme un jeu idéal pour des parties courtes mais intenses.
+      </p>
+      <div class="highlight-box">
+        Un jeu rapide, stratégique et compétitif qui comble le vide entre jeux accessibles et jeux experts.
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <strong>5 PIRATES</strong> — Tous droits réservés © 2026<br>
+    Mentions légales · Contact · Presse
+  </footer>
+</body>
+</html>
