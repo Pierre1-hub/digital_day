@@ -130,6 +130,7 @@
     .rule-section:nth-child(3) { animation-delay: 0.3s; }
     .rule-section:nth-child(4) { animation-delay: 0.4s; }
     .rule-section:nth-child(5) { animation-delay: 0.5s; }
+    .rule-section:nth-child(6) { animation-delay: 0.6s; }
 
     .rule-section::before {
       content: '';
@@ -320,8 +321,9 @@
     <div class="rule-section">
       <h2>But du Jeu</h2>
       <p>
-        Dans <strong>5 Pirates</strong>, deux barons des mers, choisis parmi les cinq disponibles, s'affrontent en lançant
-        des sorts, des secrets et des attaques grâce à leurs cartes. Le but est de réduire les points de vie de l'adversaire à zéro.
+        Dans <strong>5 Pirates</strong>, deux barons des mers, choisis parmi les cinq disponibles, s'affrontent en infligeant 
+        des dégâts, en appliquant des effets, en cachant des secrets et bien d'autres stratégies, grâce à leurs cartes. 
+        Le but est de réduire les points de vie de l'adversaire à zéro.
       </p>
     </div>
 
@@ -332,7 +334,7 @@
         <li><strong>5 coffres de cartes (decks)</strong> composés chacun de 20 cartes communes et 5 cartes de classe</li>
         <li><strong>2 dés à 6 faces</strong> (1 par joueur)</li>
         <li><strong>1 compteur de points de vie</strong> (24 PV par joueur)</li>
-        <li><strong>1 plateau de jeu</strong> pour poser les cartes</li>
+        <li><strong>1 plateau de jeu</strong></li>
       </ul>
     </div>
 
@@ -340,8 +342,8 @@
     <div class="rule-section">
       <h2>Mise en Place</h2>
       <ol>
-        <li>Les deux joueurs lancent chacun un dé. Celui qui obtient le résultat le plus
-        élevé choisit soit de sélectionner son deck en premier, soit de laisser l'adversaire
+        <li>Les deux joueurs lancent chacun un dé. Celui qui obtient le résultat le plus 
+        élevé peut choisir de sélectionner son deck en premier, ou de laisser l'adversaire 
         choisir.</li>
         <li>Chaque joueur prend un deck de 25 cartes.</li>
         <li>Les deux joueurs mélangent leur deck et piochent 5 cartes chacun.</li>
@@ -356,29 +358,33 @@
       <h3>1. Phase de Pioche</h3>
       <ul>
         <li>Piochez 1 carte au début de chaque tour.</li>
-        <li>Lancez votre dé simultanément, le résultat indique votre <strong>énergie de combat</strong>
-        pendant ce tour.</li>
+        <li>Lancez votre dé simultanément. Le résultat indique votre <strong>énergie de combat</strong> 
+        pour ce tour.</li>
       </ul>
       <div class="example">
-        <strong>Exemple :</strong> Un 4 signifie que vous pouvez jouer une ou plusieurs cartes dont
-        le coût total cumulé en énergie est inférieur à 4.
+        <strong>Exemple :</strong> Un résultat de 4 signifie que vous pouvez jouer une ou plusieurs cartes 
+        dont le coût total en énergie est inférieur ou égal à 4.
       </div>
 
       <h3>2. Phase d'Abordage (simultanée)</h3>
       <ul>
-        <li>Chaque joueur choisit les cartes qu'il veut jouer et les dépose face cachée sur
-        le milieu du plateau.</li>
-        <li>Révélez vos cartes en même temps.</li>
-        <li>Certaines cartes ont des effets immédiats, d'autres persistent pour les
-        prochains tours et les cartes secrètes s'activent lors d'événements spéciaux.</li>
+        <li>Chaque joueur choisit les cartes qu'il souhaite jouer et les dépose face cachée 
+        au centre du plateau.</li>
+        <li>Révélez les cartes en même temps.</li>
+        <li>Certaines cartes ont des effets immédiats, d'autres persistent sur plusieurs tours, 
+        et les cartes secrètes restent cachées jusqu'à ce qu'un événement spécifique ne se déclenche.</li>
       </ul>
 
       <h3>3. Phase des Conséquences</h3>
       <ul>
-        <li>Appliquez les dégâts sur les points de vie des joueurs.</li>
-        <li>Gérez les effets durables et persistants.</li>
-        <li>Défaussez les cartes jouées, sauf si un effet demande de les conserver.</li>
-        <li>Si votre pile de cartes est vide, mélangez la défausse pour refaire un deck.</li>
+        <li>Appliquez les cartes de soins et de protection.</li>
+        <li>Appliquez les dégâts aux points de vie des joueurs.</li>
+        <li>Gérez les effets durables et persistants. En cas de doute, donnez la priorité aux 
+        cartes de classes puis aux cartes les plus chères.</li>
+        <li>Les cartes <strong>« secret »</strong> ne s'activent qu'au début du tour suivant.</li>
+        <li>Défaussez les cartes jouées à face découverte, sauf indication contraire. Si vous 
+        défaussez une carte appartenant à votre adversaire, placez la carte dans sa défausse.</li>
+        <li>Si votre deck est vide, mélangez votre défausse pour former un nouveau deck.</li>
       </ul>
     </div>
 
@@ -388,8 +394,10 @@
       <ul>
         <li><strong>Confrontation simultanée :</strong> Les joueurs révèlent leurs cartes en même temps.</li>
         <li><strong>Gestion de l'énergie :</strong> Le dé limite les actions possibles à chaque tour.</li>
-        <li><strong>Secrets :</strong> Indiqués sur les cartes, ils s'activent lors d'événements précis.</li>
+        <li><strong>Secrets :</strong> Indiqués sur les cartes, ils s'activent lors d'événements précis et restent cachés jusqu'à leur déclenchement.</li>
         <li><strong>Effets persistants :</strong> Certaines cartes ont un impact sur plusieurs tours.</li>
+        <li><strong>Priorité des effets :</strong> En cas de doute, les cartes de classe ont la priorité, puis les cartes les plus chères.</li>
+        <li><strong>Soins et protection :</strong> Toujours appliqués avant les dégâts.</li>
       </ul>
     </div>
 
@@ -397,7 +405,7 @@
     <div class="rule-section">
       <h2>Classes et Talents</h2>
       <p>
-        Choisissez votre deck pour influencer la bataille : chaque baron des mers
+        Choisissez votre deck pour influencer la bataille : chaque baron des mers 
         possède 5 talents différents.
       </p>
 
@@ -466,7 +474,10 @@
     <div class="rule-section">
       <h2>Fin de la Partie</h2>
       <p>
-        Un joueur perd la partie lorsqu'il atteint <strong>0 points de vie</strong>.
+        Un joueur perd la partie lorsqu'il atteint <strong>0 point de vie</strong>.
+      </p>
+      <p>
+        En cas de <strong>mort simultanée</strong>, la partie se conclut sur une égalité.
       </p>
       <p style="margin-top: 20px; text-align: center; font-size: 18px; color: #0e2329;">
         <strong>⚔ Que le meilleur pirate gagne ! ⚔</strong>
