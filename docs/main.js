@@ -48,7 +48,7 @@
     }, observerOptions);
 
     // Observer tous les éléments animables
-    const animateElements = document.querySelectorAll('.text, .media, .players, .tier, .goals-text');
+    const animateElements = document.querySelectorAll('.text, .media, .media_2, .players, .tier, .goals-text');
     animateElements.forEach(el => {
       el.classList.add('animate-on-scroll');
       observer.observe(el);
